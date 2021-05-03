@@ -1,15 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import VideoDetail from "./videos/VideoDetail";
 import SearchBar from "./videos/SearchBar";
 import VideoList from "./videos/VideoList";
 import youtube from "../apis/youtube";
 import Header from "./Header";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
-const App = (props) => {
-  console.log("props: ", props);
-  const dispatch = useDispatch();
+const App = () => {
   const isSignedIn = useSelector((state) => state.auth.isSignedIn);
   const [videos, setVideos] = useState([]);
   const [selectedVideo, setSelectedVideo] = useState(null);
